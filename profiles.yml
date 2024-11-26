@@ -1,16 +1,15 @@
-analytics:
-  my_project:
-  target: default
+HOSPITAL_MGMT_SYSTEM:
+  target: dev
   outputs:
     dev:
       type: snowflake
-      account: <vu64251.us-east-2.aws>
+      account: vu64251.us-east-2.aws
       user: deepu
       password: 123Deepu@456
       role: ACCOUNTADMIN
       database: snowflake_dbt
       warehouse: snowflake_warehouse
-      schema: SNOWFLAKE_SC
+      schema: dbt_dvakkalagadda  # Default schema for models
       threads: 6
       client_session_keep_alive: True
       query_tag: dbt
