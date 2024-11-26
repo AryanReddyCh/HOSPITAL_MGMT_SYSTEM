@@ -36,10 +36,12 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
-  my_new_project:
-    # Applies to all files under models/example/
-    example:
+  HOSPITAL_MGMT_SYSTEM:
+    STG_HOSPITAL_MGMT_SYSTEM:
+      +schema: stg  # All staging models go into the 'staging' schema
       +materialized: table
+
+
       
 # Seed configuration
 seeds:

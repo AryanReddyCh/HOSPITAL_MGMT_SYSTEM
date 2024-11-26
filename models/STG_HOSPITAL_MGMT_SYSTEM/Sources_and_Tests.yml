@@ -1,0 +1,70 @@
+version: 2
+
+# Source definitions (raw data)
+sources:
+  - name: raw_data  # Logical name for your source
+    schema: DBT_DVAKKALAGADDA_RAW_DATA  # Actual schema name in Snowflake
+    tables:
+      - name: RAW_APPOINTMENTS
+        description: "Raw appointments data"
+      - name: RAW_BILLING
+        description: "Raw billing data"
+      - name: RAW_HOSPITAL
+        description: "Raw hospital data"
+      - name: RAW_INSURANCE
+        description: "Raw insurance data"
+      - name: RAW_PATIENTS
+        description: "Raw patients data"
+      - name: RAW_PHYSICIANS
+        description: "Raw physicians data"
+
+# Staging models (after transformations with tests)
+models:
+  - name: stg_patients
+    description: "Staging table for patients with cleaned and transformed data"
+    columns:
+      - name: patient_id
+        description: "Primary key for patients in staging table"
+        tests:
+          - unique
+          - not_null
+  - name: stg_physicians
+    description: "Staging table for physicians with standardized data"
+    columns:
+      - name: physician_id
+        description: "Primary key for physicians in staging table"
+        tests:
+          - unique
+          - not_null
+  - name: stg_hospitals
+    description: "Staging table for hospitals with cleaned data"
+    columns:
+      - name: hospital_id
+        description: "Primary key for hospitals in staging table"
+        tests:
+          - unique
+          - not_null
+  - name: stg_appointments
+    description: "Staging table for appointments with cleaned data"
+    columns:
+      - name: appointment_id
+        description: "Primary key for appointments in staging table"
+        tests:
+          - unique
+          - not_null
+  - name: stg_billing
+    description: "Staging table for billing with standardized data"
+    columns:
+      - name: billing_id
+        description: "Primary key for billing in staging table"
+        tests:
+          - unique
+          - not_null
+  - name: stg_insurance
+    description: "Staging table for insurance with cleaned and transformed data"
+    columns:
+      - name: insurance_id
+        description: "Primary key for insurance in staging table"
+        tests:
+          - unique
+          - not_null
