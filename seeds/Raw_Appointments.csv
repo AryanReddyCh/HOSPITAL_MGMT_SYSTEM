@@ -1,0 +1,51 @@
+appointment_id,patient_id,physician_id,hospital_id,appointment_date,appointment_time,reason_for_visit,diagnosis,treatment_plan,follow_up_date,status,insurance_claim_id,billing_amount,copay_amount,notes
+7890,5691,2289,3152,2024-03-31,15:17:43,Emergency,Flu,Medication,2024-06-20,Scheduled,8234,446.8,36.89,Program expert sure example campaign community stage answer.
+5880,5963,2644,3933,2024-09-11,16:40:17,Routine,Flu,Observation,2024-05-07,Canceled,5077,556.41,39.44,Result couple early customer.
+7938,5996,7757,3933,2024-07-02,21:27:06,Follow-up,Hypertension,Surgery,2024-08-13,Completed,5634,654.48,22.93,More Republican speech reflect.
+6586,1300,7343,6051,2024-07-01,23:39:29,Emergency,Fracture,Medication,2024-10-22,Scheduled,5919,797.19,37.53,Certain film because deep.
+6278,1716,3337,7297,2024-09-11,22:24:03,Checkup,Hypertension,Medication,2024-06-30,Completed,1495,796.93,10.92,List capital kid worry event voice power daughter.
+7298,8448,2723,8639,2024-02-27,14:04:50,Follow-up,Fracture,Surgery,2024-04-17,Completed,9367,450.13,47.87,State answer politics laugh house really.
+5571,3706,6127,3925,2024-02-02,09:34:01,Follow-up,Hypertension,Observation,2024-12-13,Completed,4953,289.18,46.65,Story number effect parent.
+7362,4121,6256,7626,2024-09-25,22:53:49,Checkup,Hypertension,Medication,2024-01-04,Canceled,9267,651.46,28.33,Ahead more whole doctor better order identify.
+9891,3432,4392,9182,2024-10-13,22:22:06,Checkup,Hypertension,Surgery,2024-03-21,Completed,5348,728.8,44.71,Democrat concern central professor show half mission.
+7878,4966,7129,4625,2024-02-06,14:22:10,Checkup,Fracture,Observation,2024-06-06,Scheduled,5372,714.47,32.95,International cultural risk cultural whether teach dog.
+5793,6811,9648,6870,2024-05-25,02:18:22,Checkup,Hypertension,Observation,2024-04-17,Canceled,3773,962.13,40.61,Difficult treat set film administration.
+7526,5963,4920,6606,2024-03-17,02:36:50,Checkup,Hypertension,Observation,2024-09-19,Canceled,7729,606.64,17.81,Result present western argue fish summer theory.
+8143,1442,8402,3815,2024-09-17,23:35:22,Emergency,Hypertension,Surgery,2024-05-10,Scheduled,3473,128.35,21.72,Avoid professor some no against fight.
+8145,6811,8132,7317,2024-05-29,16:24:05,Routine,Flu,Medication,2024-07-27,Canceled,3211,686.12,31.14,Large wear part health unit face including.
+5582,1300,4575,3815,2024-05-05,10:20:15,Emergency,Headache,Observation,2024-08-15,Canceled,3334,956.03,48.74,Small forget better myself foot different open.
+9932,5996,5287,7298,2024-03-10,14:37:44,Emergency,Headache,Medication,2024-11-19,Completed,2590,508.63,49.89,Argue goal program travel note human close.
+8801,5136,4291,9182,2024-01-03,14:19:21,Emergency,Fracture,Observation,2024-01-02,Scheduled,3151,253.17,44.68,Trip when eye admit why hospital east.
+8683,9223,7912,8181,2024-05-21,11:41:28,Routine,Flu,Therapy,2024-03-10,Completed,1506,760.94,11.5,Politics step organization point could even thank.
+8601,8844,2877,6606,2024-06-22,03:19:55,Checkup,Hypertension,Medication,2024-03-31,Canceled,9919,535.77,32.24,By situation apply owner herself artist.
+6091,6241,6256,6642,2024-09-14,15:04:40,Emergency,Hypertension,Therapy,2024-04-18,Canceled,2730,287.44,21.18,Lot already sound near food power everything her.
+8976,1716,7039,7626,2024-07-19,11:03:51,Routine,Flu,Observation,2024-05-05,Canceled,1665,989.84,13.46,Someone friend involve hotel dark his little.
+6377,5963,3777,6051,2024-02-28,10:25:40,Routine,Fracture,Therapy,2024-02-12,Scheduled,3520,657.21,49.58,Big cup audience kitchen every security.
+5145,9223,4392,6534,2024-01-03,20:34:03,Emergency,Flu,Surgery,2024-12-27,Completed,4074,155.87,48.16,Game know former seat hit concern event.
+8299,5178,4736,4979,2024-06-08,16:16:44,Emergency,Fracture,Observation,2024-07-22,Scheduled,7317,736.71,18.78,Forward clearly out exactly media.
+8396,3176,2644,4625,2024-10-21,13:36:32,Checkup,Headache,Therapy,2024-04-12,Canceled,5881,755.08,11.17,Some country time last dog thousand culture.
+5267,6193,4575,3152,2024-01-18,14:28:15,Emergency,Flu,Therapy,2024-03-06,Canceled,2512,163.29,44.25,Admit environmental skin ask what course.
+8924,7353,9648,7921,2024-10-16,19:04:55,Follow-up,Headache,Medication,2024-06-07,Canceled,7968,887.47,27.66,Must call eat quickly.
+9933,5704,6587,7307,2024-02-14,02:53:23,Checkup,Fracture,Medication,2024-11-07,Canceled,2792,567.26,39.35,Another morning across pass local.
+9110,4121,7210,9182,2024-11-13,01:55:17,Emergency,Headache,Therapy,2024-10-17,Canceled,7275,110.57,39.26,Picture teacher appear learn office.
+8161,2399,3501,8892,2024-09-25,13:15:39,Follow-up,Hypertension,Surgery,2024-04-23,Completed,3348,990.29,30.71,Do size my task nothing a cost water.
+5333,8844,2723,8181,2024-06-20,00:03:32,Routine,Headache,Therapy,2024-02-24,Canceled,7174,856.15,42.64,Option when her show.
+7706,5704,3475,3001,2024-11-03,01:32:23,Checkup,Hypertension,Observation,2024-07-19,Canceled,6805,300.99,34.91,Policy American part above look speech investment.
+5772,4121,9864,3466,2024-01-21,05:25:16,Emergency,Headache,Surgery,2024-08-10,Canceled,5057,194.83,32.73,Soldier me certain go number benefit after.
+8735,8539,9926,3152,2024-02-08,10:22:40,Emergency,Flu,Medication,2024-09-11,Canceled,5845,516.5,21.43,Politics outside may side.
+5940,7353,4575,7317,2024-10-26,00:49:34,Checkup,Hypertension,Medication,2024-02-13,Completed,8988,452.59,44.02,Evidence people analysis eat.
+8435,6171,4004,6534,2024-07-05,22:11:20,Emergency,Hypertension,Medication,2024-08-25,Completed,3642,100.19,10.52,Window technology something generation operation writer.
+9635,1844,6678,3652,2024-11-25,20:48:08,Emergency,Fracture,Surgery,2024-10-07,Scheduled,1867,373.81,48.64,Girl development yet.
+6489,1300,7039,9710,2024-04-08,16:24:22,Routine,Headache,Observation,2024-02-12,Scheduled,1634,855.51,21.58,Name whose start chance list.
+7881,3176,5428,8892,2024-07-02,03:06:55,Checkup,Fracture,Surgery,2024-08-16,Canceled,6922,377.1,25.81,Actually thank history.
+6718,5704,3501,9288,2024-06-27,20:36:10,Routine,Flu,Therapy,2024-09-06,Completed,2895,761.24,17.46,Increase cost goal school result consumer under.
+6803,5178,2854,7477,2024-09-23,11:55:25,Checkup,Fracture,Medication,2024-05-21,Scheduled,8172,608.42,43.32,Quite reveal appear late arrive interview civil.
+8272,5736,4736,4673,2024-10-21,16:44:45,Emergency,Headache,Observation,2024-07-04,Canceled,4908,673.54,14.78,Write send similar.
+8322,5328,2723,4360,2024-05-05,17:46:44,Routine,Headache,Therapy,2024-10-06,Completed,2751,114.17,30.84,Many consider himself others participant along.
+9309,6193,3634,3219,2024-04-02,18:27:02,Emergency,Fracture,Therapy,2024-03-12,Completed,4181,183.47,22.45,Look professional member piece how.
+6899,4413,3777,8728,2024-07-10,19:17:11,Follow-up,Hypertension,Therapy,2024-11-22,Scheduled,9116,901.0,17.69,Think need red.
+6889,7598,3337,3001,2024-07-14,01:52:00,Checkup,Headache,Surgery,2024-12-17,Scheduled,9429,932.08,31.54,Room certain modern recognize southern happy state experience.
+5139,4298,3337,4979,2024-04-09,08:49:23,Follow-up,Flu,Observation,2024-01-17,Completed,1835,271.78,13.63,Radio newspaper test provide.
+7561,5806,4004,4666,2024-02-12,09:23:24,Emergency,Flu,Surgery,2024-05-11,Completed,8031,619.95,17.41,Other first green government.
+8393,5691,5610,7297,2024-07-26,20:55:12,Checkup,Headache,Surgery,2024-11-24,Scheduled,8436,230.82,35.95,Left certain others hundred ask mind action.
+9851,1626,6127,4673,2024-02-03,21:23:52,Routine,Fracture,Therapy,2024-06-18,Scheduled,5752,677.67,33.7,Game especially dog people.
