@@ -1,5 +1,5 @@
 {{ config(materialized='table') }}
-
+select 
 physician_id,
 first_name,
 last_name,
