@@ -41,6 +41,9 @@ models:
     STG_HOSPITAL_MGMT_SYSTEM:  # Matches your folder name
       +schema: stg            # Staging models go into the 'stg' schema
       +materialized: table    # Default materialization is 'table'
+  INT_HOSPITAL_MGMT_SYSTEM:
+       +schema: int            # Staging models go into the 'stg' schema
+       +materialized: table    # Default materialization is 'table'   
 
 # Seed configuration
 seeds:
