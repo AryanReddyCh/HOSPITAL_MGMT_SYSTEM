@@ -90,8 +90,8 @@ joined_data as(
     director_name,
     emergency_contact,
     rating,
-    accreditation
-    concat(first_name,' ',last_name) as P_FULL_NAME
+    accreditation,
+    concat(first_name,' ',last_name) as P_FULL_NAME,
     specialty,
     phone_number,
     email,
