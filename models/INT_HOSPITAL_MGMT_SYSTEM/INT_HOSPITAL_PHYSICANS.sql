@@ -77,7 +77,8 @@ joined_data AS (
 
 SELECT 
     ROW_NUMBER() OVER (ORDER BY h_hospital_id, physician_hospital_id) AS surrogate_key,
-    h_hospital_id,               
+    h_hospital_id,  
+    physician_hospital_id,             
     physician_id,
     hospital_name,
     address,
