@@ -68,7 +68,7 @@ joined_data AS (
         d.city AS physician_city,
         d.state AS physician_state,
         d.zip_code AS physician_zip_code,
-        d.hospital_id AS phy_hospital_id,  -- Alias to clarify source
+        d.hospital_id AS physician_hospital_id,  -- Alias to clarify source
         d.shift_timing
     FROM hospital_data c
     LEFT OUTER JOIN physicians_data d
@@ -76,16 +76,16 @@ joined_data AS (
 )
 
 SELECT 
-    ROW_NUMBER() OVER (ORDER BY h_hospital_id, phy_hospital_id) AS surrogate_key,
-    h_hospital_id,                -- Use alias from joined_data
+    ROW_NUMBER() OVER (ORDER BY h_hospital_id, physician_hospital_id) AS surrogate_key,
+    h_hospital_id,               
     physician_id,
     hospital_name,
     address,
-    hospital_city AS city,        -- Specify column source
-    hospital_state AS state,
-    hospital_zip_code AS zip_code,
-    hospital_phone_number AS phone_number,
-    hospital_email AS email,
+    hospital_city,
+    hospital_state,
+    hospital_zip_code,
+    hospital_phone_number,
+    hospital_email,
     established_year,
     num_beds,
     num_departments,
@@ -96,14 +96,14 @@ SELECT
     CONCAT(first_name, ' ', last_name) AS P_FULL_NAME,
     specialty,
     physician_phone_number AS phone_number,
-    physician_email AS email,
+    physician_email,
     department,
     years_of_experience,
     license_number,
     clinic_address,
-    physician_city AS city,       -- Specify column source
-    physician_state AS state,
-    physician_zip_code AS zip_code,
+    physician_city,
+    physician_state,
+    physician_zip_code,
     shift_timing,
     CURRENT_TIMESTAMP AS cr_db_ts,
     CURRENT_TIMESTAMP AS upd_db_ts
