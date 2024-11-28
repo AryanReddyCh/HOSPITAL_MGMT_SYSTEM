@@ -117,26 +117,19 @@ notes,
 CURRENT_TIMESTAMP as cr_db_ts,
 CURRENT_TIMESTAMP as upd_db_ts
 from joined_data
-
-{% if is_incremental() %}
-WHERE (
-    surrogate_key NOT IN (
-        SELECT surrogate_key 
-        FROM snowflake_dbt.dbt_dvakkalagadda_int.INT_PATIENTS_APPOINTMENTS
-    )  -- New records
-    OR EXISTS (
-        SELECT 1
-        FROM snowflake_dbt.dbt_dvakkalagadda_int.INT_PATIENTS_APPOINTMENTS AS existing
-        WHERE 
-            existing.surrogate_key = CONCAT(MD5(CONCAT(
-                p_patient_id, '-', appointment_id
-            )), '-APPOINTMENT')
-            AND (
-                existing.P_first_name != P_first_name
-                OR existing.P_last_name != P_last_name
-                OR existing.p_address != p_address
-                OR existing.p_email != p_email
-            )
-    )
+    LEFT JOIN {{ this }} AS existing
+    ON CONCAT(MD5(CONCAT(
+        p_patient_id, '-', appointment_id
+    )), '-APPOINTMENT') = existing.surrogate_key
+    WHERE existing.surrogate_key IS NULL  -- New records
+        OR (
+            -- Detect updated records by comparing columns
+            existing.P_first_name != first_name
+            OR existing.P_last_name != last_name
+            OR existing.p_address != address
+            OR existing.p_email != email
+        )
 )
-{% endif %}
+
+SELECT *
+FROM NEW_OR_UPDATED_DATA
