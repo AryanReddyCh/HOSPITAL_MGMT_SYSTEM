@@ -113,7 +113,9 @@ follow_up_date,
 status,
 billing_amount,
 copay_amount,
-notes
+notes,
+CURRENT_TIMESTAMP as cr_db_ts,
+CURRENT_TIMESTAMP as upd_db_ts
 from joined_data
 
 {% if is_incremental() %}
