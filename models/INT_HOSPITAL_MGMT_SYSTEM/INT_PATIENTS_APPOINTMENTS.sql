@@ -119,5 +119,22 @@ CURRENT_TIMESTAMP as upd_db_ts
 from joined_data
 
 {% if is_incremental() %}
-WHERE surrogate_key NOT IN (SELECT surrogate_key FROM {{ this }})  -- Exclude rows already in the table
+-- Include both new records and updated records (for history)
+WHERE (
+    surrogate_key NOT IN (SELECT surrogate_key FROM {{ this }})  -- New records
+    OR
+    MD5(CONCAT(
+        p_patient_id, '-', appointment_id
+    )) IN (
+        SELECT MD5(CONCAT(
+            p_patient_id, '-', appointment_id
+        ))
+        FROM joined_data
+        EXCEPT
+        SELECT MD5(CONCAT(
+            p_patient_id, '-', appointment_id
+        ))
+        FROM {{ this }}
+    )  -- Updated records
+)
 {% endif %}
