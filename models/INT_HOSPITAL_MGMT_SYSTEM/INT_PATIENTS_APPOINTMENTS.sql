@@ -24,6 +24,7 @@ FROM
 {{ ref('STG_PATIENTS') }} AS A
 ),
 APPOINTMENTS_DATA AS (
+SELECT    
 B.appointment_id,
 B.patient_id,
 B.physician_id,
@@ -81,9 +82,9 @@ ON C.patient_id = D.patient_id
 )
 
 SELECT
-MD5(concat(
-    p_patient_id,'-',a_patient_id
-)) as surrogate_key,
+CONCAT(MD5(concat(
+    p_patient_id,'-',appointment_id
+)),'-','APPOINTMENT') as surrogate_key,
 p_patient_id,
 insurance_id,
 primary_physician_id,
