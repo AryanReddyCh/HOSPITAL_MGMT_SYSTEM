@@ -120,21 +120,23 @@ from joined_data
 
 {% if is_incremental() %}
 WHERE (
-    surrogate_key NOT IN (SELECT surrogate_key FROM {{ this }})  -- New records
+    surrogate_key NOT IN (
+        SELECT surrogate_key 
+        FROM snowflake_dbt.dbt_dvakkalagadda_int.INT_PATIENTS_APPOINTMENTS
+    )  -- New records
     OR EXISTS (
         SELECT 1
-        FROM {{ this }} AS existing
+        FROM snowflake_dbt.dbt_dvakkalagadda_int.INT_PATIENTS_APPOINTMENTS AS existing
         WHERE 
             existing.surrogate_key = CONCAT(MD5(CONCAT(
                 p_patient_id, '-', appointment_id
             )), '-APPOINTMENT')
             AND (
-                existing.p_first_name != P_first_name
-                OR existing.p_last_name != P_last_name
-                OR existing.address != P_address
-                OR existing.email != P_email
-                -- Add additional fields as needed for update checks
+                existing.P_first_name != P_first_name
+                OR existing.P_last_name != P_last_name
+                OR existing.p_address != p_address
+                OR existing.p_email != p_email
             )
-    )  -- Updated records
+    )
 )
 {% endif %}
