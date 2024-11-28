@@ -40,7 +40,7 @@ B.billing_amount,
 B.copay_amount,
 B.notes
 FROM
-{{ ref(STG_APPOINTMENTS) }} AS B
+{{ ref('STG_APPOINTMENTS') }} AS B
 ),
 JOINED_DATA AS (
 SELECT 
