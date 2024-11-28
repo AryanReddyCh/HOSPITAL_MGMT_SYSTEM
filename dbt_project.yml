@@ -35,7 +35,7 @@ models:
     INT_HOSPITAL_MGMT_SYSTEM:  # Matches your folder name
       +schema: int            # Integration models go into the 'int' schema
       +materialized: table    # Default materialization is 'table'
-
+      +description: "This model materializes as incremental and uses surrogate_key for uniqueness."
 # Seed configuration
 seeds:
   HOSPITAL_MGMT_SYSTEM:
