@@ -119,4 +119,4 @@ from joined_data
 
 {% if is_incremental() %}
 WHERE surrogate_key NOT IN (SELECT surrogate_key FROM {{ this }})  -- Exclude rows already in the table
-{% endif %};
+{% endif %}
