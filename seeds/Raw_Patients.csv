@@ -1,6 +1,6 @@
 patient_id,first_name,last_name,date_of_birth,gender,address,city,state,zip_code,phone_number,email,insurance_id,primary_physician_id,admission_date,discharge_date
 9296,Dylan,Fields,1966-09-09,Other,97265 Russell Alley,Rossport,New Hampshire,76876,2717000217,wscott@hotmail.com,4786,4920,2024-07-03,2024-01-17
-5328,April,Gonzales,1945-02-21,Male,84664 Carr Locks Apt. 996,New Mirandatown,Tennessee,78875,3680053115,elizabeth62@haynes-gamble.org,6131,2877,2024-07-28,2024-11-17
+5328,April,Gonzales,1945-02-21,female,84664 Carr Apt. 996,New Mirandatown,Tennessee,78875,3680053115,elizabeth62@haynes-gamble.org,6131,2877,2024-07-28,2024-11-17
 3432,Jeremy,Roberts,2004-02-06,Other,244 Thomas Dale,East Williamside,Kentucky,49024,0165556282,cpeters@bass.com,4918,4577,2024-04-12,2024-11-08
 7353,Erika,Garcia,1986-07-03,Male,219 Pamela Key,Lake Virginiafort,Georgia,33941,9021749276,payneisaiah@richards.biz,8661,4392,2024-04-08,2024-06-23
 3706,Sharon,Macdonald,1954-03-05,Male,5460 Odonnell Road,Jeremyfurt,Illinois,98650,6130365379,ihunter@yahoo.com,5624,5610,2024-09-30,2024-07-22
@@ -49,3 +49,4 @@ patient_id,first_name,last_name,date_of_birth,gender,address,city,state,zip_code
 1844,Lisa,Beck,1945-05-10,Other,084 Miranda Streets Apt. 403,Johnsonburgh,Missouri,84067,7006765066,montgomerymelissa@hotmail.com,5054,7927,2024-11-21,2024-08-05
 3885,Courtney,Gardner,1976-10-12,Other,7832 Klein Park Suite 944,South Catherineberg,North Carolina,50619,5643141117,brandon86@gonzales.net,5028,6678,2024-07-11,2024-06-16
 5704,Kelli,Richards,1988-06-06,Other,9596 Morris Hills Suite 424,Lake Rebecca,Nevada,17736,2096450536,matthew83@burgess.biz,6212,4575,2024-06-08,2024-05-22
+5700,maddy,robin,1997-02-22,other,8008 5th st,op,ny,66212,158974561,maddy@gmail.com,9988,4455,2022-06-26,2023-05-25
