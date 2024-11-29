@@ -8,7 +8,7 @@
     a.coverage_start_date,
     a.coverage_end_date,
     a.monthly_premium
-    FROM {{ ref('int_emp_insurance_billing') }}  a
+    FROM {{ ref('int_emp_insurance_billing') }}  as a
     left outer join
-    {{ ref('int_hospital_physicans') }} b
+    {{ ref('int_hospital_physicans') }} as b
     on a.insurance_id=b.insurance_id
