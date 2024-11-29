@@ -1,0 +1,50 @@
+version: 2
+
+# Integration models
+models:
+  - name: INT_HOSPITAL_PHYSICIANS  # Name of the integration model
+    description: "Integration model combining hospital and physician data"
+    columns:
+      - name: surrogate_key
+        description: "Unique surrogate key for the integration model"
+        tests:
+          - unique
+          - not_null
+      - name: h_hospital_id
+        description: "Hospital ID from hospital data"
+        tests:
+          - not_null
+      - name: physician_hospital_id
+        description: "Hospital ID from physician data"
+        tests:
+          - not_null
+      - name: physician_id
+        description: "Primary key for physician data"
+        tests:
+          - not_null
+          
+  - name: INT_PATIENTS_APPOINTMENTS
+    description: "Integration model combining patients and appointments"
+    columns:
+      - name: surrogate_key
+        description: "Surrogate key for integration model"
+        tests:
+          - unique
+          - not_null
+      - name: p_patient_id
+        description: "Primary patient ID"
+        tests:
+          - not_null
+      - name: appointment_id
+        description: "Primary appointment ID"
+        tests:
+          - not_null
+      - name: cr_db_ts
+        description: "Create timestamp"
+        tests:
+          - not_null
+      - name: upd_db_ts
+        description: "Update timestamp"
+        tests:
+          - not_null
+  

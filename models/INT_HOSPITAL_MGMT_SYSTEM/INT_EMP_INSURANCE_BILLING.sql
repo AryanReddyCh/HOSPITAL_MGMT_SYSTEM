@@ -1,0 +1,113 @@
+{{ config(materialized='ephemeral') }}
+
+WITH insurance_data AS (
+    SELECT
+        insurance_id,
+        insurance_name,
+        policy_number,
+        policy_holder,
+        coverage_start_date,
+        coverage_end_date,
+        monthly_premium,
+        deductible,
+        coverage_type,
+        contact_number,
+        email AS insurance_email,
+        address AS insurance_address,
+        city AS insurance_city,
+        state AS insurance_state,
+        zip_code AS insurance_zip_code,
+        hospital_id AS insurance_hospital_id
+    FROM {{ ref('STG_INSURANCE') }}
+),
+billing_data AS (
+    SELECT
+        billing_id,
+        appointment_id,
+        patient_id,
+        insurance_id AS billing_insurance_id,
+        hospital_id AS billing_hospital_id,
+        billing_date,
+        amount,
+        discount,
+        tax,
+        final_amount,
+        status,
+        payment_method,
+        payment_date,
+        processed_by,
+        remarks
+    FROM {{ ref('STG_BILLING') }}
+),
+joined_data AS (
+    SELECT 
+        i.insurance_id AS insurance_id,
+        i.insurance_name,
+        i.policy_number,
+        i.policy_holder,
+        i.coverage_start_date,
+        i.coverage_end_date,
+        i.monthly_premium,
+        i.deductible,
+        i.coverage_type,
+        i.contact_number,
+        i.insurance_email,
+        i.insurance_address,
+        i.insurance_city,
+        i.insurance_state,
+        i.insurance_zip_code,
+        i.insurance_hospital_id,
+        b.billing_id,
+        b.appointment_id,
+        b.patient_id,
+        b.billing_hospital_id,
+        b.billing_date,
+        b.amount,
+        b.discount,
+        b.tax,
+        b.final_amount,
+        b.status,
+        b.payment_method,
+        b.payment_date,
+        b.processed_by,
+        b.remarks
+    FROM insurance_data i
+    LEFT OUTER JOIN billing_data b
+        ON i.insurance_id = b.billing_insurance_id
+)
+
+SELECT 
+    ROW_NUMBER() OVER (ORDER BY insurance_id, billing_id) AS surrogate_key,
+    insurance_id,
+    insurance_name,
+    policy_number,
+    policy_holder,
+    coverage_start_date,
+    coverage_end_date,
+    monthly_premium,
+    deductible,
+    coverage_type,
+    contact_number,
+    insurance_email,
+    insurance_address,
+    insurance_city,
+    insurance_state,
+    insurance_zip_code,
+    insurance_hospital_id,
+    billing_id,
+    appointment_id,
+    patient_id,
+    billing_hospital_id,
+    billing_date,
+    amount,
+    discount,
+    tax,
+    final_amount,
+    status,
+    payment_method,
+    payment_date,
+    processed_by,
+    remarks,
+    CURRENT_TIMESTAMP AS cr_db_ts,
+    CURRENT_TIMESTAMP AS upd_db_ts
+FROM joined_data
