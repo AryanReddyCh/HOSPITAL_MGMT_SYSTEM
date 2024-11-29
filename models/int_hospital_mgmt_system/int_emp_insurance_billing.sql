@@ -18,7 +18,7 @@ WITH insurance_data AS (
         state AS insurance_state,
         zip_code AS insurance_zip_code,
         hospital_id AS insurance_hospital_id
-    FROM {{ ref('STG_INSURANCE') }}
+    FROM {{ ref('stg_insurance') }}
 ),
 billing_data AS (
     SELECT
@@ -37,7 +37,7 @@ billing_data AS (
         payment_date,
         processed_by,
         remarks
-    FROM {{ ref('STG_BILLING') }}
+    FROM {{ ref('stg_billing') }}
 ),
 joined_data AS (
     SELECT 

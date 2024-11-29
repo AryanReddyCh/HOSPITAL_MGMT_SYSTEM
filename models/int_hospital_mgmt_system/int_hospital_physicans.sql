@@ -17,7 +17,7 @@ WITH hospital_data AS (
         a.emergency_contact,
         a.rating,
         a.accreditation
-    FROM {{ ref('STG_HOSPITAL') }} AS a
+    FROM {{ ref('stg_hospital') }} AS a
 ),
 physicians_data AS (
     SELECT 
@@ -36,7 +36,7 @@ physicians_data AS (
         b.zip_code,
         b.hospital_id,
         b.shift_timing
-    FROM {{ ref('STG_PHYSICIANS') }} AS b
+    FROM {{ ref('stg_physicians') }} AS b
 ),
 joined_data AS (
     SELECT 

@@ -1,7 +1,7 @@
 version: 2
 # Staging models (after transformations with tests)
 models:
-  - name: STG_PATIENTS
+  - name: stg_patients
     description: "Staging table for patients with cleaned and transformed data"
     columns:
       - name: patient_id
@@ -9,7 +9,7 @@ models:
         tests:
           - unique
           - not_null
-  - name: STG_PHYSICIANS
+  - name: stg_physicians
     description: "Staging table for physicians with standardized data"
     columns:
       - name: physician_id
@@ -17,7 +17,7 @@ models:
         tests:
           - unique
           - not_null
-  - name: STG_HOSPITAL
+  - name: stg_hospital
     description: "Staging table for hospitals with cleaned data"
     columns:
       - name: hospital_id
@@ -25,7 +25,7 @@ models:
         tests:
           - unique
           - not_null
-  - name: STG_APPOINTMENTS
+  - name: stg_appointments
     description: "Staging table for appointments with cleaned data"
     columns:
       - name: appointment_id
@@ -33,7 +33,7 @@ models:
         tests:
           - unique
           - not_null
-  - name: STG_BILLING
+  - name: stg_billing
     description: "Staging table for billing with standardized data"
     columns:
       - name: billing_id
@@ -41,7 +41,7 @@ models:
         tests:
           - unique
           - not_null
-  - name: STG_INSURANCE
+  - name: stg_insurance
     description: "Staging table for insurance with cleaned and transformed data"
     columns:
       - name: insurance_id

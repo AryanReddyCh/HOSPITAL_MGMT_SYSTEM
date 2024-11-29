@@ -2,7 +2,7 @@ version: 2
 
 # Integration models
 models:
-  - name: INT_HOSPITAL_PHYSICIANS  # Name of the integration model
+  - name: int_hospital_physicans  # Name of the integration model
     description: "Integration model combining hospital and physician data"
     columns:
       - name: surrogate_key
@@ -23,7 +23,7 @@ models:
         tests:
           - not_null
           
-  - name: INT_PATIENTS_APPOINTMENTS
+  - name: int_patients_appointments
     description: "Integration model combining patients and appointments"
     columns:
       - name: surrogate_key

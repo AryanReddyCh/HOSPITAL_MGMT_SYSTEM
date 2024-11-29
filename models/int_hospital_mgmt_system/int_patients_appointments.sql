@@ -22,7 +22,7 @@ WITH PATIENTS_DATA AS (
         A.discharge_date,
         CURRENT_TIMESTAMP AS src_cr_db_ts,
         CURRENT_TIMESTAMP AS src_upd_db_ts
-    FROM {{ ref('STG_PATIENTS') }} AS A
+    FROM {{ ref('stg_patients') }} AS A
 ),
 APPOINTMENTS_DATA AS (
     SELECT    
@@ -43,7 +43,7 @@ APPOINTMENTS_DATA AS (
         B.notes,
         CURRENT_TIMESTAMP AS src_cr_db_ts,
         CURRENT_TIMESTAMP AS src_upd_db_ts
-    FROM {{ ref('STG_APPOINTMENTS') }} AS B
+    FROM {{ ref('stg_appointments') }} AS B
 ),
 JOINED_DATA AS (
     SELECT 
