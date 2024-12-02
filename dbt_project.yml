@@ -40,3 +40,17 @@ models:
 seeds:
   HOSPITAL_MGMT_SYSTEM:
     +schema: raw_data
+    change_delimeters:  # Subfolder name under seeds
+      +schema: raw_delimeter
+      patients:  # Seed file name (without extension)
+        +delimiter: "|"
+      appointments:  # Another file within change_delimeters
+        +delimiter: "~"
+      billing:  # Another file within change_delimeters
+        +delimiter: "\t"
+      hospitals:  # Another file within change_delimeters
+        +delimiter: ";"
+      insurance:  # Another file within change_delimeters
+        +delimiter: "^"
+      physicians:  # Another file within change_delimeters
+        +delimiter: ":"
