@@ -5,7 +5,7 @@
 
 WITH PATIENTS_DATA AS (
     SELECT 
-        A.patient_id,
+        A.patient_id AS p_patient_id, -- Alias added for consistency
         A.first_name,
         A.last_name,
         A.date_of_birth,
@@ -47,7 +47,10 @@ APPOINTMENTS_DATA AS (
 ),
 JOINED_DATA AS (
     SELECT 
-        C.patient_id AS p_patient_id,
+        CONCAT(MD5(CONCAT(
+            C.p_patient_id, '-', D.appointment_id
+        )), '-APPOINTMENT') AS surrogate_key,
+        C.p_patient_id, -- Correct alias reference
         C.first_name,
         C.last_name,
         C.date_of_birth,
@@ -83,13 +86,11 @@ JOINED_DATA AS (
         D.src_upd_db_ts AS appointment_upd_db_ts
     FROM PATIENTS_DATA C
     LEFT OUTER JOIN APPOINTMENTS_DATA D
-    ON C.patient_id = D.patient_id
+    ON C.p_patient_id = D.patient_id -- Correct join condition
 ),
 UPDATED_AND_NEW_DATA AS (
     SELECT
-        CONCAT(MD5(CONCAT(
-            JD.p_patient_id, '-', JD.appointment_id
-        )), '-APPOINTMENT') AS surrogate_key,
+        COALESCE(JD.surrogate_key, MD5(CONCAT(JD.p_patient_id, '-', JD.insurance_id))) AS surrogate_key,
         JD.p_patient_id,
         JD.insurance_id,
         JD.primary_physician_id,

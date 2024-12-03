@@ -54,3 +54,7 @@ seeds:
         +delimiter: "^"
       physicians:  # Another file within change_delimeters
         +delimiter: ":"
+
+snapshots:
+  HOSPITAL_MGMT_SYSTEM:
+    +schema: snapshot  # Specify the schema for snapshots

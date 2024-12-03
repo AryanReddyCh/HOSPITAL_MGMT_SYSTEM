@@ -47,4 +47,8 @@ models:
         description: "Update timestamp"
         tests:
           - not_null
-  
+
+sources:
+  - name: int                # Schema name
+    tables:
+      - name: int_hospital_physicans  # Table name
