@@ -2,7 +2,7 @@ version: 2
 
 # Integration models
 models:
-  - name: int_hospital_physicans  # Name of the integration model
+  - name: int_hospital_physicians  # Name of the integration model
     description: "Integration model combining hospital and physician data"
     columns:
       - name: surrogate_key
