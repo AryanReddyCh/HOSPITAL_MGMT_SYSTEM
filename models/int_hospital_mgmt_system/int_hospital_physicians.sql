@@ -71,7 +71,7 @@ joined_data AS (
         d.hospital_id AS physician_hospital_id,  -- Alias to clarify source
         d.shift_timing
     FROM hospital_data c
-    LEFT OUTER JOIN physicians_data d
+    inner JOIN physicians_data d
         ON c.hospital_id = d.hospital_id
 )
 
