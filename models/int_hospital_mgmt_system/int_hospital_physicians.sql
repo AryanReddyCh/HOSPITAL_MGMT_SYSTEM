@@ -73,6 +73,11 @@ joined_data AS (
     FROM hospital_data c
     inner JOIN physicians_data d
         ON c.hospital_id = d.hospital_id
+),
+classified_data AS (
+    SELECT *,
+           {{ hospital_type_classification() }} AS hospital_type
+    FROM joined_data
 )
 
 SELECT 
@@ -106,6 +111,7 @@ SELECT
     physician_state,
     physician_zip_code,
     shift_timing,
+    hospital_type,
     CURRENT_TIMESTAMP AS cr_db_ts,
     CURRENT_TIMESTAMP AS upd_db_ts
-FROM joined_data
+FROM classified_data
