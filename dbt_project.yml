@@ -36,6 +36,9 @@ models:
       +schema: int            # Integration models go into the 'int' schema
       +materialized: table    # Default materialization is 'table'
       +description: "This model materializes as incremental and uses surrogate_key for uniqueness."
+    mart_hospital_mgmt_system:
+    +schema: mart            # Staging models go into the 'mart' schema
+    +materialized: view    # Default materialization is 'view'  
 # Seed configuration
 seeds:
   HOSPITAL_MGMT_SYSTEM:

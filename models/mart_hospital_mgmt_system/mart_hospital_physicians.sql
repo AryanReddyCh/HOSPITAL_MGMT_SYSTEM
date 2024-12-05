@@ -1,6 +1,6 @@
 {{ config(materialized='view') }}
 
-select * from
+select
 SURROGATE_KEY,
 H_HOSPITAL_ID,
 PHYSICIAN_HOSPITAL_ID,
