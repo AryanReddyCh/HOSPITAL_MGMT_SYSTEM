@@ -3,7 +3,7 @@ HOSPITAL_MGMT_SYSTEM:
   outputs:
     dev:
       type: snowflake
-      account: vu64251.us-east-2.aws
+      account: ni13889.us-east-2.aws
       user: deepu
       password: 123Deepu@456
       role: ACCOUNTADMIN
