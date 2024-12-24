@@ -1,26 +1,7 @@
 version: 2
-
-# Source definitions (raw data)
-sources:
-  - name: raw_data  # Logical name for your source
-    schema: DBT_DVAKKALAGADDA_RAW_DATA  # Actual schema name in Snowflake
-    tables:
-      - name: RAW_APPOINTMENTS
-        description: "Raw appointments data"
-      - name: RAW_BILLING
-        description: "Raw billing data"
-      - name: RAW_HOSPITAL
-        description: "Raw hospital data"
-      - name: RAW_INSURANCE
-        description: "Raw insurance data"
-      - name: RAW_PATIENTS
-        description: "Raw patients data"
-      - name: RAW_PHYSICIANS
-        description: "Raw physicians data"
-
 # Staging models (after transformations with tests)
 models:
-  - name: STG_PATIENTS
+  - name: stg_patients
     description: "Staging table for patients with cleaned and transformed data"
     columns:
       - name: patient_id
@@ -28,7 +9,7 @@ models:
         tests:
           - unique
           - not_null
-  - name: STG_PHYSICIANS
+  - name: stg_physicians
     description: "Staging table for physicians with standardized data"
     columns:
       - name: physician_id
@@ -36,7 +17,7 @@ models:
         tests:
           - unique
           - not_null
-  - name: STG_HOSPITAL
+  - name: stg_hospital
     description: "Staging table for hospitals with cleaned data"
     columns:
       - name: hospital_id
@@ -44,7 +25,7 @@ models:
         tests:
           - unique
           - not_null
-  - name: STG_APPOINTMENTS
+  - name: stg_appointments
     description: "Staging table for appointments with cleaned data"
     columns:
       - name: appointment_id
@@ -52,7 +33,7 @@ models:
         tests:
           - unique
           - not_null
-  - name: STG_BILLING
+  - name: stg_billing
     description: "Staging table for billing with standardized data"
     columns:
       - name: billing_id
@@ -60,7 +41,7 @@ models:
         tests:
           - unique
           - not_null
-  - name: STG_INSURANCE
+  - name: stg_insurance
     description: "Staging table for insurance with cleaned and transformed data"
     columns:
       - name: insurance_id

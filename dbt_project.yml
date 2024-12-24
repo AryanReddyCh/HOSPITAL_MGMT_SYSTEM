@@ -1,4 +1,3 @@
-
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
@@ -19,30 +18,51 @@ seed-paths: ["seeds"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 
-target-path: "target"  # directory which will store compiled SQL files
-clean-targets:         # directories to be removed by `dbt clean`
+target-path: "target"  # Directory which will store compiled SQL files
+clean-targets:         # Directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
-
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
-
-# In dbt, the default materialization for a model is a view. This means, when you run 
-# dbt run or dbt build, all of your models will be built as a view in your data platform. 
-# The configuration below will override this setting for models in the example folder to 
-# instead be materialized as tables. Any models you add to the root of the models folder will 
-# continue to be built as views. These settings can be overridden in the individual model files
-# using the `{{ config(...) }}` macro.
-
-# Model configurations
 models:
   HOSPITAL_MGMT_SYSTEM:
-    STG_HOSPITAL_MGMT_SYSTEM:  # Matches your folder name
-      +schema: stg            # Staging models go into the 'stg' schema
-      +materialized: table    # Default materialization is 'table'
+    stg_hospital_mgmt_system:  # Matches your folder name
+      +schema: stg             # Staging models go into the 'stg' schema
+      +materialized: table     # Default materialization is 'table'
+    int_hospital_mgmt_system:  # Matches your folder name
+      +schema: int             # Integration models go into the 'int' schema
+      +materialized: table     # Default materialization is 'table'
+      +description: "This model materializes as incremental and uses surrogate_key for uniqueness."
+    mart_hospital_mgmt_system:
+      +schema: mart            # Mart models go into the 'mart' schema
+      +materialized: view      # Default materialization is 'view'
+    list:
+      +schema: list            # Specify the schema for list models
+      +materialized: view      # Default materialization is 'view'
 
 # Seed configuration
 seeds:
   HOSPITAL_MGMT_SYSTEM:
     +schema: raw_data
+    change_delimeters:          # Subfolder name under seeds
+      +schema: raw_delimeter
+      patients:                 # Seed file name (without extension)
+        +delimiter: "|"
+      appointments:             # Another file within change_delimeters
+        +delimiter: "~"
+      billing:                  # Another file within change_delimeters
+        +delimiter: "\t"
+      hospitals:                # Another file within change_delimeters
+        +delimiter: ";"
+      insurance:                # Another file within change_delimeters
+        +delimiter: "^"
+      physicians:               # Another file within change_delimeters
+        +delimiter: ":"
+    list:
+      +schema: raw             # Specify the schema for list seeds
+
+# Snapshot configuration
+snapshots:
+  HOSPITAL_MGMT_SYSTEM:
+    +schema: snapshot           # Specify the schema for snapshots

@@ -1,0 +1,7 @@
+version: 2
+
+sources:
+  - name: dbt_dvakkalagadda_int
+    schema: dbt_dvakkalagadda_int
+    tables:
+      - name: int_hospital_physicians

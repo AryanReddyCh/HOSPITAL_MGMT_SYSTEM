@@ -1,0 +1,19 @@
+version: 2
+
+# Source definitions (raw data)
+sources:
+  - name: raw_data  # Logical name for your source
+    schema: DBT_DVAKKALAGADDA_RAW_DATA  # Actual schema name in Snowflake
+    tables:
+      - name: RAW_APPOINTMENTS
+        description: "Raw appointments data"
+      - name: RAW_BILLING
+        description: "Raw billing data"
+      - name: RAW_HOSPITAL
+        description: "Raw hospital data"
+      - name: RAW_INSURANCE
+        description: "Raw insurance data"
+      - name: RAW_PATIENTS
+        description: "Raw patients data"
+      - name: RAW_PHYSICIANS
+        description: "Raw physicians data"
